@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@RequiredArgsConstructor
 public class Rate {
 
     @Id
@@ -26,5 +25,10 @@ public class Rate {
     @Column
     private Integer overallImpression;
 
-
+    public Rate(Integer performance, Integer soundAndLighting, Integer venue, Integer overallImpression) {
+        this.performance = performance;
+        this.soundAndLighting = soundAndLighting;
+        this.venue = venue;
+        this.overallImpression = overallImpression;
+    }
 }

@@ -1,0 +1,14 @@
+<p (click)="trigger()">location works!</p>
+
+<div class="location-main">
+    <p>{{_location._id}}</p>
+    <p>{{_location.name}}</p>
+    <p>{{_location.description}}</p>
+    <p>{{_location.created_at}}</p>
+    <p>{{_location.address}}</p>
+    <p>{{_location.total_rating}}</p>
+    <p>{{_location.type}}</p>
+    <img src={{`localhost:8080/images/${_location.image_path}`}} alt={{_location.image_path}}/>
+</div>
+
+<app-reviews [_location]="_location"></app-reviews>

@@ -19,6 +19,9 @@ public class Review {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column
+    private Integer eventCount;
+
+    @Column
     private Boolean hidden = false;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
@@ -36,6 +39,12 @@ public class Review {
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private User user;
 
-    @Column
-    private Integer occurrencesHappened;
+    public Review(Integer eventCount, Rate rate, Location location, Event event, Comment comment, User user) {
+        this.eventCount = eventCount;
+        this.rate = rate;
+        this.location = location;
+        this.event = event;
+        this.comment = comment;
+        this.user = user;
+    }
 }

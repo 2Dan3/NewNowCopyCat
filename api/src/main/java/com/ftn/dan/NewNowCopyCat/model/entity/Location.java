@@ -34,6 +34,7 @@ public class Location {
     @Column
     private String type;
 
-
+    @OneToOne(fetch = FetchType.EAGER)
+    private Image image;
 
 }

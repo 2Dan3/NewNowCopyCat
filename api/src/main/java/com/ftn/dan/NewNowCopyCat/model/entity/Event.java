@@ -33,6 +33,6 @@ public class Event {
     @Column(nullable = false)
     private Boolean recurrent;
 
-    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     private Location location;
 }

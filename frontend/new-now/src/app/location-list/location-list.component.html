@@ -1,0 +1,6 @@
+<app-location 
+  *ngFor="let location of locations"
+  [_location]="location"
+  (triggeredLocation)="apiCall($event)">
+</app-location>
+

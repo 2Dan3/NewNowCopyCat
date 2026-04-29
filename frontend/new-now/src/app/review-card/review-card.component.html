@@ -1,0 +1,10 @@
+<p>{{_review._id}}</p>
+<p>{{_review.created_at}}</p>
+<p>{{_review.user.email}}</p>
+<p>{{_review.event_count}}</p>
+<p>{{_review.location.name}}</p>
+<p>{{_review.event.name}}</p>
+
+<app-rate-card [_review]="_review"></app-rate-card>
+
+<app-comment-card [_comment]="_review.comment"></app-comment-card>

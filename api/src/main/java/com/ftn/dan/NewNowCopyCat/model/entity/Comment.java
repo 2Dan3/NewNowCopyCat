@@ -15,13 +15,13 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String text;
 
     @Column
     private LocalDateTime createdAt = LocalDateTime.now();
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     private User user;
 
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
@@ -29,4 +29,10 @@ public class Comment {
 
     @Column(nullable = false)
     private Boolean deleted = false;
+
+    public Comment(String text, User author, Comment parentComment) {
+        this.text = text;
+        this.user = author;
+        this.parentComment = parentComment;
+    }
 }
