@@ -27,10 +27,10 @@ public class CommentResponseDTO {
         this.createdAt = c.getCreatedAt();
         this.hidden = c.getDeleted();
 
-        this.rate = new RateResponseDTO(c.getRate());
+//        this.rate = new RateResponseDTO(c.getRate());
         this.user = new UserResponseDTO(c.getUser());
-        this.event = new EventResponseDTO(c.getEvent());
-        this.location = new LocationResponseDTO(c.getLocation());
+//        this.event = new EventResponseDTO(c.getEvent());
+//        this.location = new LocationResponseDTO(c.getLocation());
         this.parentCommentId = c.getParentComment() != null ? c.getParentComment().getId() : null;
     }
 

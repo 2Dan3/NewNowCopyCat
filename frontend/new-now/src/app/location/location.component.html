@@ -8,7 +8,7 @@
     <p>{{_location.address}}</p>
     <p>{{_location.total_rating}}</p>
     <p>{{_location.type}}</p>
-    <img src={{`localhost:8080/images/${_location.image_path}`}} alt={{_location.image_path}}/>
+    <img src={{_image_path}} alt={{_location.image_path}}/>
 </div>
 
 <app-reviews [_location]="_location"></app-reviews>

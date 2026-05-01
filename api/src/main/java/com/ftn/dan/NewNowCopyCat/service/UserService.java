@@ -2,6 +2,7 @@ package com.ftn.dan.NewNowCopyCat.service;
 
 import com.ftn.dan.NewNowCopyCat.model.DTO.ChangeDataUserDTO;
 import com.ftn.dan.NewNowCopyCat.model.DTO.UserDTO;
+import com.ftn.dan.NewNowCopyCat.model.DTO.UserRegistrationDTO;
 import com.ftn.dan.NewNowCopyCat.model.entity.User;
 
 import java.util.List;
@@ -30,5 +31,5 @@ public interface UserService {
 
     User save(User user);
 
-    User createUser(UserDTO newUser);
+    User createUser(UserRegistrationDTO newUser);
 }

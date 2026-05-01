@@ -15,5 +15,5 @@ public interface ReviewService {
 
     List<Review> findAllByLocation_Id(Long locationId);
 
-    Review createReview(ReviewCreationDTO dto, User loggedUser);
+    Review createReview(ReviewCreationDTO dto, User loggedUser) throws Exception;
 }

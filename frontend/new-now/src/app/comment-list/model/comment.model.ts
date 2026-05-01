@@ -10,10 +10,10 @@ export class Comment {
     created_at: Date;
     hidden: Boolean;
 
-    rate: Rate;
+    // rate: Rate;
     user: User;
-    event: Event;
-    location: Location;
+    // event: Event;
+    // location: Location;
     parent_comment_id: number;
     // review: Review;
 
@@ -23,10 +23,10 @@ export class Comment {
         this.created_at = obj && new Date(obj.created_at).toLocaleDateString() || null;
         this.hidden = obj && obj.hidden || false;
 
-        this.rate = obj && new Rate(obj.rate) || null;
+        // this.rate = obj && new Rate(obj.rate) || null;
         this.user = obj && new User(obj.user) || null;
-        this.event = obj && new Event(obj.event) || null;
-        this.location = obj && new Location(obj.location) || null;
+        // this.event = obj && new Event(obj.event) || null;
+        // this.location = obj && new Location(obj.location) || null;
         this.parent_comment_id = obj && obj.parentCommentId || null;
         // this.review = obj && new Review(obj.review) || null;
     }

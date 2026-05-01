@@ -4,13 +4,13 @@ export class User {
     password: string;
     name: string;
     created_at: Date;
-    phoneNumber: string;
+    phone_number: string;
     birthday: Date;
     address: string;
     city: string;
 
     role: string;
-    avatarPath: string;
+    avatar_path: string;
 
     constructor(obj?: any) {
         this._id = obj && obj.id || null;
@@ -18,12 +18,12 @@ export class User {
         this.password = obj && obj.password || null;
         this.name = obj && obj.name || null;
         this.created_at = obj && new Date(obj.created_at).toLocaleDateString() || null;
-        this.phoneNumber = obj && obj.phoneNumber || null;
+        this.phone_number = obj && obj.phone_number || null;
         this.birthday = obj && new Date(obj.birthday).toLocaleDateString() || null;
         this.address = obj && obj.address || null;
         this.city = obj && obj.city || null;
 
         this.role = obj && obj.role || null;
-        this.avatarPath = obj && obj.avatarPath || null;
+        this.avatar_path = obj && obj.avatar_path || null;
     }
 }

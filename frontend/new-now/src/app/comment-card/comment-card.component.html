@@ -1,4 +1,6 @@
 <p>{{_comment._id}}</p>
+<p>{{_comment.created_at}}</p>
+<p>By: {{_comment.user.email}}</p>
 <p *ngIf="!_comment.hidden">{{_comment.text}}</p>
 <p *ngIf="_comment.hidden">[This comment was removed.]</p>
 

@@ -2,6 +2,7 @@ package com.ftn.dan.NewNowCopyCat.service.impl;
 
 import com.ftn.dan.NewNowCopyCat.model.DTO.ChangeDataUserDTO;
 import com.ftn.dan.NewNowCopyCat.model.DTO.UserDTO;
+import com.ftn.dan.NewNowCopyCat.model.DTO.UserRegistrationDTO;
 import com.ftn.dan.NewNowCopyCat.model.entity.User;
 import com.ftn.dan.NewNowCopyCat.model.enums.Roles;
 import com.ftn.dan.NewNowCopyCat.repository.ManagesRepository;
@@ -44,15 +45,16 @@ public class UserServiceImpl implements UserService {
 //    }
 
     @Override
-    public User createUser(UserDTO userDTO) {
+    public User createUser(UserRegistrationDTO userDTO) {
 
-        if ( existsForEmail(userDTO.getEmail()) ) {
+        if ( existsForEmail(userDTO.email()) ) {
             return null;
         }
 
         User newUser = new User();
-        newUser.setEmail(userDTO.getEmail().trim() );
-        newUser.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        newUser.setEmail(userDTO.email().trim() );
+        newUser.setPassword(passwordEncoder.encode(userDTO.password()));
+        newUser.setAddress(userDTO.address().trim() );
         newUser.setRole(Roles.USER);
 //todo all that set (opt image too)
         newUser = userRepository.save(newUser);

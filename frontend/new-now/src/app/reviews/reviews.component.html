@@ -1,5 +1,6 @@
 <app-review-card
     *ngFor="let review of reviews"
+    ngIf={{review.hidden === false}}
     [_review]="review"
     [_location]="_location">
 </app-review-card>

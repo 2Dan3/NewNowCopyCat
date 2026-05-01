@@ -1,1 +1,25 @@
-<p>login works!</p>
+<!-- <p>login works!</p> -->
+
+<div id="login-content-wrapper">
+
+    <img src="../../assets/reddit-logo-icon.png"/>
+
+    <div id="aligner-div">
+        <h1>Welcome!</h1>
+        <h3>Please Log In to proceed:</h3>
+        <form [formGroup]="loginForm" (submit)="login()" class="form-area">
+            
+            <br>
+            <input formControlName="username" class="field" type="email" placeholder="Email">
+            <br>
+            <input formControlName="password" class="field" type="password" placeholder="Password">
+            <br>
+        
+            <button id="btn-log-in" type="submit" *ngIf="loginForm.valid">Log me in</button>
+            <p id="error" *ngIf="loginForm.invalid">Insufficient data provided!</p>
+
+            <p> <a href="/register">Not registered yet?</a> </p>
+        </form>
+    </div>
+
+</div>

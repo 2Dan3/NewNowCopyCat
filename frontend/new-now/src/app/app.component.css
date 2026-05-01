@@ -1,0 +1,12 @@
+body {
+    background-color: #3e8d1a;
+    /* align-items: center; */
+    height: 100%;
+    width: 100%;
+}
+
+#nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}

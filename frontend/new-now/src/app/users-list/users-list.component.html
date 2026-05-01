@@ -1,1 +1,5 @@
-<p>users-list works!</p>
+<app-user-card 
+    *ngFor="let user of users"
+    [_user]="user"
+    (triggeredUser)="apiCallUser($event)">
+</app-user-card>

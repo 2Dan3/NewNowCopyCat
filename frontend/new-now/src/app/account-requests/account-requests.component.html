@@ -1,0 +1,6 @@
+<app-account-request
+  *ngFor="let request of requests"
+  [_request]="request"
+  (triggeredRequest)="apiCallRequest($event)">
+
+</app-account-request>

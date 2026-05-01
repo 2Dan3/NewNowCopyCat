@@ -1,9 +1,6 @@
 package com.ftn.dan.NewNowCopyCat.controller;
 
-import com.ftn.dan.NewNowCopyCat.model.DTO.ChangeDataUserDTO;
-import com.ftn.dan.NewNowCopyCat.model.DTO.JwtAuthenticationRequest;
-import com.ftn.dan.NewNowCopyCat.model.DTO.UserDTO;
-import com.ftn.dan.NewNowCopyCat.model.DTO.UserTokenState;
+import com.ftn.dan.NewNowCopyCat.model.DTO.*;
 import com.ftn.dan.NewNowCopyCat.model.entity.User;
 import com.ftn.dan.NewNowCopyCat.security.TokenUtils;
 import com.ftn.dan.NewNowCopyCat.service.UserService;
@@ -47,12 +44,12 @@ public class UserController {
     }
 
     @PostMapping(consumes = "application/json", value = "/")
-    public ResponseEntity<UserDTO> registerNewUser(@Valid @RequestBody UserDTO newUser){
+    public ResponseEntity<UserDTO> registerNewUser(@Valid @RequestBody UserRegistrationDTO newUser){
 
         User createdUser = userService.createUser(newUser);
 
         if(createdUser == null){
-            return new ResponseEntity<>(null, HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
         UserDTO userDTO = new UserDTO(createdUser);
 

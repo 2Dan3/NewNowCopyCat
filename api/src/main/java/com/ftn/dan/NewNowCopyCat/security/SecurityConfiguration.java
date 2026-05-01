@@ -68,9 +68,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-/*                .antMatchers(HttpMethod.GET, "/reddit/users/all").permitAll()*/
                 .antMatchers(HttpMethod.GET, "/events").permitAll()
                 .antMatchers(HttpMethod.GET, "/locations").permitAll()
+//                .antMatchers(HttpMethod.GET, "/users/all").permitAll()
+                .antMatchers(HttpMethod.POST, "/users/").permitAll()
+                .antMatchers(HttpMethod.POST, "/users/login").permitAll()
                 .antMatchers(HttpMethod.PUT, "/reddit/users/ban").access("@webSecurity.moderatesCommunity(authentication, request, #communityId)")
                 .antMatchers(HttpMethod.PUT, "/reddit/users/unban").access("@webSecurity.moderatesCommunity(authentication, request, #communityId)")
 /*                .antMatchers(HttpMethod.POST, "reddit/users/logout").access("@webSecurity.isUserLogged(authentication, request)")*/

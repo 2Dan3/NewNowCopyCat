@@ -1,0 +1,32 @@
+<div id="nav-items-container">
+    
+    <div class="img-div">
+        <img src="../../assets/reddit-logo-icon.png" alt="Home" (click)="toHome()"/>
+    </div>
+    
+    <div class="nav-item">
+        <a href="/">Events</a>
+    </div>
+    <div class="nav-item">
+        <a href="/locations">Locations</a>
+    </div>
+    <div class="nav-item">
+        <a href="/users">Users</a>
+    </div>
+    <div class="nav-item" *ngIf="">
+        <a href="/requests">Registration requests</a>
+    </div>
+    
+    <div id="profile-img" class="img-div right-float" *ngIf="this.authService.isTokenPresent()">
+        <img src="../../assets/real_profile_icon_demo.png" alt="My profile" (click)="toMyProfilePage()"/>
+    </div>
+
+    <!-- *ngIf='!isUserLogged() for /login' -->
+    <div class="nav-item right-float" *ngIf="!this.authService.isTokenPresent()">
+        <a href="/login">Sign In</a>
+    </div>    
+    
+    <!-- *ngIf='isUserLogged() for /logout' -->
+    <button *ngIf="this.authService.isTokenPresent()" class="nav-item right-float" id="sign-out-btn" (click)="logout()">Sign Out</button>
+        
+</div>

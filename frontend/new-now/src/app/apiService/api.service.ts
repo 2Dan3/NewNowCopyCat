@@ -30,6 +30,10 @@ export class ApiService {
     'Access-Control-Allow-Origin': '*'
   });
 
+  getApiUrl(): string {
+    return this._api_url;
+  }
+
   get(path: string, args?: any): Observable<any> {
 
     const options = {
@@ -41,33 +45,34 @@ export class ApiService {
       console.log("args: " + args);
     }
 
-    return this.http.get(this._api_url + path, options);
+    return this.http.get(this.getApiUrl() + path, options);
   }
 
   post(path: string, body: any, customHeaders?: HttpHeaders): Observable<any> {
-    
-    return this.request(this._api_url + path, body, RequestMethod.Post, customHeaders);
+
+    return this.request(path, body, RequestMethod.Post, customHeaders);
   }
 
   put(path: string, body: any): Observable<any> {
 
-    return this.request(this._api_url + path, body, RequestMethod.Put);
+    return this.request(path, body, RequestMethod.Put);
   }
 
   delete(path: string, body?: any): Observable<any> {
     
-    return this.request(this._api_url + path, body, RequestMethod.Delete);
+    return this.request(path, body, RequestMethod.Delete);
   }
 
   patch(path: string, body?: any): Observable<any> {
 
-    return this.request(this._api_url + path, body, RequestMethod.Patch)
+    return this.request(path, body, RequestMethod.Patch)
   }
 
   
   private request(path: string, body: any, method: RequestMethod, customHeaders?: HttpHeaders): Observable<any> {
 
-    const req = new HttpRequest(method, this._api_url + path, body, { headers: customHeaders || this.headers, })
+    const req = new HttpRequest(method, this.getApiUrl() + path, body, { headers: customHeaders || this.headers, })
+    console.log(req);
 
     return this.http.request(req)
     .pipe(filter(response => response instanceof HttpResponse))

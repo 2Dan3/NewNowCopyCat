@@ -15,8 +15,6 @@ export class ReviewCardComponent implements OnInit {
   
   private _api_url: string = "/reviews";
   
-  apiService!: ApiService;
-
   @Input()
   _location!: Location;
   
@@ -25,7 +23,7 @@ export class ReviewCardComponent implements OnInit {
   
 
   constructor(
-    apiService: ApiService,
+    private apiService: ApiService,
   ) 
   {
     this.reviews = [];

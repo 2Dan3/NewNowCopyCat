@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AccountRequest } from '../account-requests/model/account-request.model';
 
 @Component({
   selector: 'app-account-request',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountRequestComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  _request!: AccountRequest;
+
+  @Output()
+  triggeredRequest! :EventEmitter<any>;
+
+  constructor() {
+    this.triggeredRequest = new EventEmitter();
+   }
 
   ngOnInit(): void {
+  }
+
+  requestClick():void {
+    this.triggeredRequest.emit(this._request);
   }
 
 }

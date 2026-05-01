@@ -32,6 +32,6 @@ public class UserDTO {
         this.address = u.getAddress();
         this.city = u.getCity();
         this.role = u.getRole();
-        this.avatarPath = u.getImage().getPath();
+        this.avatarPath = u.getImage() != null ? u.getImage().getPath() : null;
     }
 }

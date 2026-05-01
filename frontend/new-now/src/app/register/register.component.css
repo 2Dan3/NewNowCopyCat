@@ -1,0 +1,100 @@
+#register-content-wrapper{
+    background-image: url(../../assets/bg_nebula_2.png);
+    background-size: cover;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    align-items: center;
+}
+
+img{
+    width: 20%;
+    margin: 2% 40%;
+}
+
+#aligner-div{
+    /* height: 52vh; */
+    margin: auto;
+    vertical-align: middle;
+}
+
+#aligner-div * {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.form-area{
+    margin: auto;
+    vertical-align: middle;
+    /* transform: translate(-50%, -50%); */
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 4%;
+}
+
+.field{
+    background-image: linear-gradient(to bottom right, #ffffff, #7180f0);
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    color: gray;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;    
+}
+
+.field:focus{
+    /* border: 1px solid orangered; */
+    transition: all .5s ease-in-out;
+    border-radius: 3px;
+    color: #FFFFFF;
+    box-shadow: 1;
+}
+
+#btn-sign-up{
+    background-color: orangered;
+    border: 1px solid orangered;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10%;
+}
+
+#btn-sign-up:hover, #btn-sign-up:focus{
+    background-image: radial-gradient(orangered, #ff6600);
+    border-radius: 24px;
+    border: 1px solid #fd9d5d;
+    transition: all .2s ease-in-out;
+    box-shadow: 1;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+p{
+    margin: 5%;
+    text-align: center;
+    border-top: 1px solid #FFFFFF;
+    height: 5vh;
+}
+
+p *{
+    
+    font-size: large;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}

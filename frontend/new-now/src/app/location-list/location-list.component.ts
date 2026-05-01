@@ -18,13 +18,13 @@ export class LocationListComponent implements OnInit {
       private apiService: ApiService,
     ) 
     {
-      // this.locations = [];
+      this.locations = [];
      }
      
     ngOnInit(): void {
   
       this.getLocations().subscribe(res => {
-        this.locations = [];
+        // this.locations = [];
   
         for (const element of res) {
           this.locations.push(new Location(element));

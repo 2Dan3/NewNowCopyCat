@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -42,21 +43,26 @@ public class ReviewServiceSQLImpl implements ReviewService {
         return reviewRepository.findAllByLocation_Id(locationId);
     }
 
+    @Transactional
     @Override
     public Review createReview(ReviewCreationDTO dto, User user) throws Exception {
 
-        Integer eventCount = eventService.countEventOccurencesAtLocation(dto.getLocationId());
+        try {
+            Integer eventCount = eventService.countEventOccurencesAtLocation(dto.getLocationId());
 
-        Rate rate = new Rate(dto.getPerformance(), dto.getSoundAndLighting(), dto.getVenue(), dto.getOverallImpression());
+            Rate rate = new Rate(dto.getPerformance(), dto.getSoundAndLighting(), dto.getVenue(), dto.getOverallImpression());
 
-        Location location = locationService.findById(dto.getLocationId());
+            Location location = locationService.findById(dto.getLocationId());
 
-        Event event = eventService.findById(dto.getEventId());
+            Event event = eventService.findById(dto.getEventId());
 
-        Comment comment = new Comment(dto.getCommentText(), user, null);
+            Comment comment = new Comment(dto.getCommentText(), user, null);
 
-        Review r = new Review(eventCount, rate, location, event, comment, user);
+            Review r = new Review(eventCount, rate, location, event, comment, user);
 
-        return reviewRepository.save(r);
+            return reviewRepository.save(r);
+        }catch (Exception e) {
+            throw e;
+        }
     }
 }

@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
+  private _role_admin = "ADMIN";
+
   constructor(
     private router: Router,
     private apiService: ApiService,
@@ -22,7 +24,7 @@ export class AuthService {
     });
 
     const body = {
-      'email': user.email,
+      'username': user.username,
       'password': user.password
     };
 
@@ -69,5 +71,19 @@ export class AuthService {
     window.alert("You have been signed out.");
     this.router.navigate(['/']);
   }
+
+  isUserAdmin(): boolean {
+  const token = this.getToken();
+  if (token) {
+
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    // console.log(token);
+    // console.log(payload);
+    // console.log("auth svc isUserAdmin: ", payload.role + this._role_admin);
+    return payload.role.authority === this._role_admin;
+  }
+  return false;
+}
+
 
 }

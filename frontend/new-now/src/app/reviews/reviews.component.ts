@@ -14,14 +14,12 @@ export class ReviewsComponent implements OnInit {
   reviews!: Array<Review>;
   
   private _api_url: string = "/reviews";
-  
-  apiService!: ApiService;
-  
+    
   @Input()
   _location!: Location;
 
   constructor(
-    apiService: ApiService
+    private apiService: ApiService
   )
   {
     this.reviews = [];
@@ -35,6 +33,8 @@ export class ReviewsComponent implements OnInit {
               for (const element of res) {
                 this.reviews.push(new Review(element));
               }
+
+              this.reviews.filter(rev => rev.hidden === false);
             }
         )
   }

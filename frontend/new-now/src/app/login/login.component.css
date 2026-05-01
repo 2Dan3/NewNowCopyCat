@@ -1,0 +1,119 @@
+#login-content-wrapper{
+    background-image: url(../../assets/bg_nebula_2.png);
+    background-size: cover;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: middle;
+    align-items: center;
+}
+
+img{
+    width: 20%;
+    margin: auto 40%;
+}
+
+#aligner-div{
+    width: 40%;
+    /* height: 49vh; */
+    margin: auto;
+    vertical-align: middle;
+}
+
+#aligner-div * {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.form-area{
+    margin: auto;
+    vertical-align: middle;
+    /* transform: translate(-50%, -50%); */
+}
+
+h3{
+    margin-top: 2%;
+    margin-bottom: 6%;
+    text-decoration: underline;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.field{
+    text-align: center;
+    background-image: linear-gradient(to bottom left, #ffffff, #7180f0);
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    color: gray;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    
+}
+
+.field:focus{
+    /* border: 1px solid orangered; */
+    transition: all .3s ease-in-out;
+    border-radius: 3px;
+    color: #FFFFFF;
+    box-shadow: 1;
+}
+
+#btn-log-in{
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-color: orangered;
+    border: 1px solid orangered;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#btn-log-in:hover, #btn-log-in:focus{
+    background-image: radial-gradient(orangered, #ff6600);
+    border-radius: 24px;
+    border: 1px solid #fd9d5d;
+    transition: all .2s ease-in-out;
+    box-shadow: 1;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+p{
+    margin: 5%;
+    text-align: center;
+    border-top: 1px solid #FFFFFF;
+    height: 5vh;
+}
+
+p *{
+    
+    font-size: large;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+
+#error{
+    font-weight: bold;
+    color: red;
+    font-size: xx-large;
+    border: 1px solid red;
+    background-color: rgba(245, 245, 245, 0.603);
+}

@@ -17,7 +17,6 @@ import { ReplyListComponent } from './reply-list/reply-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AccountRequestComponent } from './account-request/account-request.component';
-import { AccountRequestListComponent } from './account-request-list/account-request-list.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import { LocationComponent } from './location/location.component';
 import { TokenInterceptor } from './interceptor/token.interceptor';
@@ -25,6 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { RatesComponent } from './rates/rates.component';
 import { RateCardComponent } from './rate-card/rate-card.component';
+import { UserCardComponent } from './user-card/user-card.component';
+import { AccountRequestsComponent } from './account-requests/account-requests.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,17 +45,20 @@ import { RateCardComponent } from './rate-card/rate-card.component';
     ReplyListComponent,
     ProfileComponent,
     AccountRequestComponent,
-    AccountRequestListComponent,
     LocationListComponent,
     LocationComponent,
     ReviewsComponent,
     RatesComponent,
-    RateCardComponent
+    RateCardComponent,
+    UserCardComponent,
+    AccountRequestsComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

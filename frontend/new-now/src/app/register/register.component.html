@@ -1,1 +1,27 @@
-<p>register works!</p>
+<div id="register-content-wrapper">
+
+    <img src="../../assets/reddit-logo-icon.png"/>
+
+    <div id="aligner-div">
+        <h1>First, let us register your account:</h1>
+        <!-- <p *ngIf="notification" [class]="notification.msgType">{{notification.msgBody}}</p> -->
+                                                                        <!-- VVV *ngIf="!submitted" -->
+        <form class="form-area" (submit)="onSubmit()" [formGroup]="registerForm">
+            
+            <br>
+            <input id="email" class="field" type="email" placeholder="Email" formControlName="email" required>
+            <br>
+            <input id="pw" class="field" type="password" placeholder="Password" formControlName="password" required>
+            <!-- <input id="repeated-pw" class="field" type="password" placeholder="Confirm password"> -->
+            <br>
+            <input class="field" type="text" placeholder="Street address" formControlName="address" required>
+            <br>
+            <button id="btn-sign-up" type="submit" *ngIf="registerForm.valid">Sign me up!</button>
+            <p> <a href="/login">Already have an account?</a> </p>
+        </form>
+
+        <!-- <mat-spinner *ngIf="submitted" mode="indeterminate"></mat-spinner> -->
+
+    </div>
+
+</div>

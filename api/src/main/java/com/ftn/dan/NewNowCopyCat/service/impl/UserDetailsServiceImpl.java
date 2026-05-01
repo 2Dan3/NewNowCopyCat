@@ -37,7 +37,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("There is no user that goes by: " + username);
         }else{
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
-            String role = "ROLE_" + user.getRole().toString();
+//            "ADMIN || USER"
+            String role = user.getRole().toString();
             grantedAuthorities.add(new SimpleGrantedAuthority(role));
 
             return new org.springframework.security.core.userdetails.User(

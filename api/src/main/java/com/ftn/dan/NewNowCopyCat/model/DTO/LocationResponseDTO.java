@@ -27,6 +27,6 @@ public class LocationResponseDTO {
         this.address = location.getAddress();
         this.totalRating = location.getTotalRating();
         this.type = location.getType();
-        this.imagePath = location.getImage().getPath();
+        this.imagePath = location.getImage() != null ? location.getImage().getPath() : null;
     }
 }

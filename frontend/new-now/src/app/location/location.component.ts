@@ -12,22 +12,23 @@ export class LocationComponent implements OnInit {
 
   @Input()
     _location! :Location;
+    _image_path: string = "";
     
   @Output()
   triggeredLocation :EventEmitter<any>;
   
-  apiService!: ApiService;
   private _api_url: string = "/locations";
 
 
   constructor(
-    apiService: ApiService,
+    private apiService: ApiService,
   ) 
   {
     this.triggeredLocation = new EventEmitter();
   }
 
   ngOnInit(): void {
+    this._image_path = `${this.apiService.getApiUrl()}/images/${this._location.image_path}`;
   }
 
 
